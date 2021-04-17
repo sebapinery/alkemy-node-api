@@ -1,0 +1,498 @@
+{
+	"info": {
+		"_postman_id": "3a5c047f-3a8a-42e7-9cd3-698bc28a434e",
+		"name": "Alkemy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Register new user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"newUser\",\n\t\"password\": \"1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"seba\",\n\t\"password\": \"1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movies",
+			"item": [
+				{
+					"name": "Add a movie",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "user-token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InNlYmEiLCJjcmVhdGVkQXQiOjE2MTg2MjIyOTgsImV4cGlyZWRBdCI6MTYxODYyNTg5OH0.WQ4Ns474H61Q2baOl6VBTmFjzggbJD1GQ6_GFsxe12E",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"Mickey 3\",\n\t\"image\": \"/images/movies/\",\n\t\"releaseDate\": \"1999-01-20\",\n\t\"rating\": 4,\n\t\"genere\": \"Animals\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/movies/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"movies",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All movies",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "user-token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InNlYmEiLCJjcmVhdGVkQXQiOjE2MTg2MjIyOTgsImV4cGlyZWRBdCI6MTYxODYyNTg5OH0.WQ4Ns474H61Q2baOl6VBTmFjzggbJD1GQ6_GFsxe12E",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/movies?details=all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"movies"
+							],
+							"query": [
+								{
+									"key": "details",
+									"value": "all"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "user-token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InNlYmEiLCJjcmVhdGVkQXQiOjE2MTg2MjIyOTgsImV4cGlyZWRBdCI6MTYxODYyNTg5OH0.WQ4Ns474H61Q2baOl6VBTmFjzggbJD1GQ6_GFsxe12E",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/movies/search/mick?genere=ave&sort=asc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"movies",
+								"search",
+								"mick"
+							],
+							"query": [
+								{
+									"key": "genere",
+									"value": "ave"
+								},
+								{
+									"key": "sort",
+									"value": "asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find a specific movie",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "user-token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InNlYmEiLCJjcmVhdGVkQXQiOjE2MTg2MjIyOTgsImV4cGlyZWRBdCI6MTYxODYyNTg5OH0.WQ4Ns474H61Q2baOl6VBTmFjzggbJD1GQ6_GFsxe12E",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/movies/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a movie",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "user-token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InNlYmEiLCJjcmVhdGVkQXQiOjE2MTg2MjIyOTgsImV4cGlyZWRBdCI6MTYxODYyNTg5OH0.WQ4Ns474H61Q2baOl6VBTmFjzggbJD1GQ6_GFsxe12E",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/movies/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a movie",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "user-token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InNlYmEiLCJjcmVhdGVkQXQiOjE2MTg2MjIyOTgsImV4cGlyZWRBdCI6MTYxODYyNTg5OH0.WQ4Ns474H61Q2baOl6VBTmFjzggbJD1GQ6_GFsxe12E",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"timon y pumba 2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/movies/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Characters",
+			"item": [
+				{
+					"name": "Create a character",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "user-token",
+								"type": "text",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InNlYmEiLCJjcmVhdGVkQXQiOjE2MTg2MjIyOTgsImV4cGlyZWRBdCI6MTYxODYyNTg5OH0.WQ4Ns474H61Q2baOl6VBTmFjzggbJD1GQ6_GFsxe12E"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"PJ new\",\n\t\"image\": \"https://i.pinimg.com/originals/ef/ff/07/efff0743a66fbc13f1a5d0c5dd49384c.png\",\n\t\"weight\": 15,\n\t\"age\": 4,\n\t\"history\": \"Suricata salvaje\",\n\t\"MoviesId\": [1,3]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/characters",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"characters"
+							],
+							"query": [
+								{
+									"key": "details",
+									"value": "all",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All characters",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "user-token",
+								"type": "text",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InNlYmEiLCJjcmVhdGVkQXQiOjE2MTg2MjIyOTgsImV4cGlyZWRBdCI6MTYxODYyNTg5OH0.WQ4Ns474H61Q2baOl6VBTmFjzggbJD1GQ6_GFsxe12E"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/characters",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"characters"
+							],
+							"query": [
+								{
+									"key": "details",
+									"value": "all",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "user-token",
+								"type": "text",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InNlYmEiLCJjcmVhdGVkQXQiOjE2MTg2MjIyOTgsImV4cGlyZWRBdCI6MTYxODYyNTg5OH0.WQ4Ns474H61Q2baOl6VBTmFjzggbJD1GQ6_GFsxe12E"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/characters/search/m?weight=&age=&movieId=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"characters",
+								"search",
+								"m"
+							],
+							"query": [
+								{
+									"key": "weight",
+									"value": ""
+								},
+								{
+									"key": "age",
+									"value": ""
+								},
+								{
+									"key": "movieId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find a specific character",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "user-token",
+								"type": "text",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InNlYmEiLCJjcmVhdGVkQXQiOjE2MTg2MjIyOTgsImV4cGlyZWRBdCI6MTYxODYyNTg5OH0.WQ4Ns474H61Q2baOl6VBTmFjzggbJD1GQ6_GFsxe12E"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/characters/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"characters",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a character",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "user-token",
+								"type": "text",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InNlYmEiLCJjcmVhdGVkQXQiOjE2MTg2MjIyOTgsImV4cGlyZWRBdCI6MTYxODYyNTg5OH0.WQ4Ns474H61Q2baOl6VBTmFjzggbJD1GQ6_GFsxe12E"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"weight\": 26\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/characters/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"characters",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a character",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "user-token",
+								"type": "text",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InNlYmEiLCJjcmVhdGVkQXQiOjE2MTg2MjIyOTgsImV4cGlyZWRBdCI6MTYxODYyNTg5OH0.WQ4Ns474H61Q2baOl6VBTmFjzggbJD1GQ6_GFsxe12E"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/characters/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"characters",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a character",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
