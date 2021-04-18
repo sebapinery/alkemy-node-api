@@ -117,7 +117,8 @@ router.post('/',[
     check('weight', 'New character must a valid weight').isInt(),
     check('age', 'New character must a age value').not().isEmpty(),
     check('weight', 'New character must a valid age').isInt(),
-    check('history', 'New character must have an history').not().isEmpty()
+    check('history', 'New character must have an history').not().isEmpty(),
+    check('MoviesId', 'Please enter the movies in an array').isArray()
 ], async (req, res) => {
 
     const errors = validationResult(req);
