@@ -14,7 +14,6 @@ router.post('/register',[
     check('username', 'username can not be empty').not().isEmpty(),
     check('password', 'password can not be empty').not().isEmpty(),
 ], async (req, res) => {
-    // var { username, password } = req.body;
     const errors = validationResult(req);
     if(!errors.isEmpty()){
         return res.status(422).json({errors: errors.array()})

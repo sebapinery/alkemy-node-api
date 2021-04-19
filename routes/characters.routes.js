@@ -112,7 +112,6 @@ router.get('/search/:search?', async (req, res) => {
 router.post('/',[
     check('name', 'New character must have a name').not().isEmpty(),
     check('image', 'New character must have an image').not().isEmpty(),
-    check('image', 'New character must have an image').isURL(),
     check('weight', 'New character must weight value').not().isEmpty(),
     check('weight', 'New character must a valid weight').isInt(),
     check('age', 'New character must a age value').not().isEmpty(),
@@ -138,7 +137,7 @@ router.post('/',[
         const newCharacter = await Character.findByPk(createdCharacter.id, {
             include: {
                 model: Movie,
-                as: 'Movies'
+                as: 'Movies',
             }
         })
 
@@ -154,7 +153,8 @@ router.post('/',[
         const characterWithMovie = await Character.findByPk(createdCharacter.id, {
             include: {
                 model: Movie,
-                as: 'Movies'
+                as: 'Movies',
+                attributes: ['title']
             }})
         res.json(characterWithMovie)
     }

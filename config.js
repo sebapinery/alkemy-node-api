@@ -1,7 +1,7 @@
 module.exports = {
     database: {
-        username: 'test',
-        password: 'test',
+        username: 'root',
+        password: 'seba2801',
         database: 'alkemy-node-api',
         host: 'localhost'
     },

@@ -10,10 +10,6 @@ User.init({
             notNull: {
                 msg: 'Debe ingresar un username'
             },
-            isAlpha: {
-                args: true,
-                msg: 'El username solo puede contener letras'
-            },
             len: {
                 args: [4, 15],
                 msg: 'El username debe contener entre 4 y 15'
