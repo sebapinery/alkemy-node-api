@@ -6,8 +6,6 @@
 
 2 - Configurar conexion a la base de datos en archivo config.js
 
-####Javascript　
-
 ```
 database: {
         username: 'test',
@@ -267,6 +265,49 @@ Propiedad "MoviesId"
 }
 ```
 
+#### Relacionar personaje con pelicula
+ Method: **POST**
+
+> /api/characters/addToMovie
+
+ Body - Introducimos el **id** del personaje que queremos relacionar con el **id** de la pelicula.
+ ```
+{
+	"characterId": 1,
+	"movieId": 5
+}
+
+```
+Response - Obtenemos el personaje con el detalle completo.
+ ```
+{
+  "id": 1,
+  "name": "Timon",
+  "weight": 12,
+  "image": "./images/characters/timon.jpg",
+  "age": 4,
+  "history": " Una suricata",
+  "createdAt": "2021-04-19T20:53:33.000Z",
+  "updatedAt": "2021-04-19T20:53:33.000Z",
+  "Movies": [
+    {
+      "title": "Timon y Pumba",
+      "character_movie": {
+        "CharacterId": 1,
+        "MovieId": 1
+      }
+    },
+    {
+      "title": "Las aventuras de Mickey y Pluto 2",
+      "character_movie": {
+        "CharacterId": 1,
+        "MovieId": 5
+      }
+    }
+  ]
+}
+
+```
 
 
 
