@@ -25,11 +25,11 @@ database: {
  
  
 
-# - Rutas
+# Rutas
 
-Autenticacion de usuarios
+## Autenticacion de usuarios
 -------------
-## Registro de usuario 
+#### Registro de usuario 
 
 Method:** POST**
 > /api/users/register 
@@ -61,7 +61,7 @@ Response
 Incluir el token en los headers de las consultas como "user-token" y el token como valor. El token tiene una valiadez de una hora.
 
 
-## Login de usuario 
+#### Login de usuario 
 
 Method:** POST**
 > /api/users/login
@@ -84,8 +84,6 @@ Response
 Incluir el token en los headers de las consultas como "user-token" y el token como valor. El token tiene una valiadez de una hora.
 
 
-Autenticacion de usuarios
--------
 
 ## Personajes
 
@@ -605,7 +603,7 @@ Response
     "updatedAt": "2021-04-19T21:38:30.685Z",
     "createdAt": "2021-04-19T21:38:30.685Z"
 }
-
+```
 
 
 #### Eliminar una pelicula
