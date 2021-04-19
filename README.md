@@ -217,7 +217,8 @@ Response
 ```
 #### Crear personaje
  Method: **POST**
- Body
+ 
+ Body reques
  ```
 {
 	"name": "Abu",
@@ -268,7 +269,7 @@ Propiedad "MoviesId"
 
 > /api/characters/addToMovie
 
- Body - Introducimos el **id** del personaje que queremos relacionar con el **id** de la pelicula.
+ Body request - Introducimos el **id** del personaje que queremos relacionar con el **id** de la pelicula.
  ```
 {
 	"characterId": 1,
@@ -330,7 +331,7 @@ Response
   
 Reemplazar ":id" por el id del personaje que queremos modificar  
 
-  body - ingresamos el campo a modificar
+Body request - ingresamos el campo a modificar
 ```
 {
   "weight": 26
@@ -540,7 +541,7 @@ Response
 
 ```
 
-Detalle de Pelicula 
+#### Detalle de Pelicula 
 
 Method: GET
 
@@ -580,6 +581,7 @@ Response
 ```
 #### Crear Pelicula
  Method: **POST**
+ 
  Body
  ```
 {
@@ -627,7 +629,7 @@ Response
   
 Reemplazar ":id" por el id de la plicula que queremos modificar  
 
-  body - ingresamos el campo a modificar
+ Body request - ingresamos el campo a modificar
 ```
 {
     "rating": "5"
