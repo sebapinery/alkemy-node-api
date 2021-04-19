@@ -218,7 +218,7 @@ Response
 #### Crear personaje
  Method: **POST**
  
- Body reques
+ Body request
  ```
 {
 	"name": "Abu",
@@ -582,7 +582,7 @@ Response
 #### Crear Pelicula
  Method: **POST**
  
- Body
+ Body request
  ```
 {
 	"title": "Mickey 3",
