@@ -6,8 +6,6 @@
 
 2 - Configurar conexion a la base de datos en archivo config.js
 
-####Javascript　
-
 ```
 database: {
         username: 'test',
@@ -27,11 +25,11 @@ database: {
  
  
 
-# - Rutas
+# Rutas
 
-Autenticacion de usuarios
+## Autenticacion de usuarios
 -------------
-## Registro de usuario 
+#### Registro de usuario 
 
 Method:** POST**
 > /api/users/register 
@@ -63,7 +61,7 @@ Response
 Incluir el token en los headers de las consultas como "user-token" y el token como valor. El token tiene una valiadez de una hora.
 
 
-## Login de usuario 
+#### Login de usuario 
 
 Method:** POST**
 > /api/users/login
@@ -86,8 +84,6 @@ Response
 Incluir el token en los headers de las consultas como "user-token" y el token como valor. El token tiene una valiadez de una hora.
 
 
-Autenticacion de usuarios
--------
 
 ## Personajes
 
@@ -221,7 +217,8 @@ Response
 ```
 #### Crear personaje
  Method: **POST**
- Body
+ 
+ Body request
  ```
 {
 	"name": "Abu",
@@ -263,10 +260,53 @@ Propiedad "MoviesId"
 - En caso de ingresar el id de una pelicula que no existe recibira el siguiente mensaje
 ```
 {
-  "error": "Una o mas peliculas ingresadas no existe, el personaje no fue creado"
+  "error": "One or more movies entered does not exist, the character was not created."
 }
 ```
 
+#### Relacionar personaje con pelicula
+ Method: **POST**
+
+> /api/characters/addToMovie
+
+ Body request - Introducimos el **id** del personaje que queremos relacionar con el **id** de la pelicula.
+ ```
+{
+	"characterId": 1,
+	"movieId": 5
+}
+
+```
+Response - Obtenemos el personaje con el detalle completo.
+ ```
+{
+  "id": 1,
+  "name": "Timon",
+  "weight": 12,
+  "image": "./images/characters/timon.jpg",
+  "age": 4,
+  "history": " Una suricata",
+  "createdAt": "2021-04-19T20:53:33.000Z",
+  "updatedAt": "2021-04-19T20:53:33.000Z",
+  "Movies": [
+    {
+      "title": "Timon y Pumba",
+      "character_movie": {
+        "CharacterId": 1,
+        "MovieId": 1
+      }
+    },
+    {
+      "title": "Las aventuras de Mickey y Pluto 2",
+      "character_movie": {
+        "CharacterId": 1,
+        "MovieId": 5
+      }
+    }
+  ]
+}
+
+```
 
 
 
@@ -291,7 +331,7 @@ Response
   
 Reemplazar ":id" por el id del personaje que queremos modificar  
 
-  body - ingresamos el campo a modificar
+Body request - ingresamos el campo a modificar
 ```
 {
   "weight": 26
@@ -501,7 +541,7 @@ Response
 
 ```
 
-Detalle de Pelicula 
+#### Detalle de Pelicula 
 
 Method: GET
 
@@ -541,7 +581,8 @@ Response
 ```
 #### Crear Pelicula
  Method: **POST**
- Body
+ 
+ Body request
  ```
 {
 	"title": "Mickey 3",
@@ -564,7 +605,7 @@ Response
     "updatedAt": "2021-04-19T21:38:30.685Z",
     "createdAt": "2021-04-19T21:38:30.685Z"
 }
-
+```
 
 
 #### Eliminar una pelicula
@@ -588,7 +629,7 @@ Response
   
 Reemplazar ":id" por el id de la plicula que queremos modificar  
 
-  body - ingresamos el campo a modificar
+ Body request - ingresamos el campo a modificar
 ```
 {
     "rating": "5"
