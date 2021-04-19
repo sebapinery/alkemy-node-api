@@ -259,7 +259,7 @@ Propiedad "MoviesId"
 - En caso de ingresar el id de una pelicula que no existe recibira el siguiente mensaje
 ```
 {
-  "error": "Una o mas peliculas ingresadas no existe, el personaje no fue creado"
+  "error": "One or more movies entered does not exist, the character was not created."
 }
 ```
 
