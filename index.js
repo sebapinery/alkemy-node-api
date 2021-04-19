@@ -1,11 +1,12 @@
 const express = require('express');
 const app = express();
 const sequelize = require('./database/db');
+const config = require('./config')
 require('./database/asociations')
 
 
 // SETTINGS
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || config.port;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

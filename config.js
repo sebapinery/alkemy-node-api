@@ -5,5 +5,6 @@ module.exports = {
         database: 'alkemy-node-api',
         host: 'localhost'
     },
-    secretFrase: 'aklemy'
+    secretFrase: 'aklemy',
+    port: 3000
 }

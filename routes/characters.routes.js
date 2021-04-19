@@ -146,7 +146,7 @@ router.post('/',[
                 .catch( async (e) => {
                     await Character.destroy({ where: { id: createdCharacter.id} })
                     res.status(404).json({
-                    error: 'Una o mas peliculas ingresadas no existe, el personaje no fue creado'
+                    error: 'One or more movies entered does not exist, the character was not created.'
                 })})
             }
         }
